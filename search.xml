@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>杭州与我</title>
+    <url>/2022/09/09/hangzhou/</url>
+    <content><![CDATA[<p>已经忘记第一次来杭州是什么时候了，因为我很小就来过杭州，小时候感觉大城市真好，灯火通明，小时候的想法也真的天真，让人怀恋</p>
+]]></content>
+      <categories>
+        <category>技术之外</category>
+      </categories>
+      <tags>
+        <tag>财米油盐</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我是谁？</title>
+    <url>/2022/09/09/about-me/</url>
+    <content><![CDATA[<p>作者： 我叫不拖延<br>时间：2022&#x2F;08&#x2F;21</p>
+<p>站在山中来看这座山，只能看见山的一角，无法观其全貌，也不能客观的评价一座山，看自己也是一样，我是谁？我是一个怎么样的人？我现在的状态是什么样的？我的未来又会怎么发展？<br>我们应该是最了解自己的，但是事实好像不是这回事，对别人的客观评价，我能够脱口而出，但是对于我自己，我好像什么都说不出来，今天就尝试一下，自己和自己对话，</p>
+<h3 id="我是谁？"><a href="#我是谁？" class="headerlink" title="我是谁？"></a>我是谁？</h3><ol>
+<li>从爸妈的角度来看，我是一个从小就很不让人省心，不听话，脾气大，而且自以为是的家伙，现在长大了，好像好一点了，但是他有时候还是不听话，不让人省心，</li>
+<li>从朋友的角度来看，我是一个刚开始很热情，懂事，尊重我的人，但是好像他很敏感，有时候莫名其妙的生气，他真的好奇怪，好难相处，</li>
+<li>我自己来看，我是一个有着极强的自尊心，希望能帮助别人，热心肠，有时候没有能力但是有喜欢逞强，但是自己却管不住自己的人，总是半途而废，渴望成功，但是又静不下心来（至少此刻是的）但是，我也有一些优点，有自知之明，不甘平凡，有危机意识</li>
+</ol>
+<h3 id="我的工作和生活"><a href="#我的工作和生活" class="headerlink" title="我的工作和生活"></a>我的工作和生活</h3><p>大学刚刚毕业，我实习一年，工作了两个月了，总体来说；前端工作能够胜任，但是对于一些复杂，需要动脑，考验基础的工作，对我来说就够呛，所以，我需要的是，静下心来，不能急，一步一个脚印，打好基础，<strong>培养学习的习惯，努力财务自由，自己给自己打工</strong> ，对于生活，单身的我，渴望爱情，但是，现实摆在面前，努力争取，做一个积极乐观自信的人，</p>
+<h3 id="职业规划"><a href="#职业规划" class="headerlink" title="职业规划"></a>职业规划</h3><p>最近听到好多大佬说；工作前两年非常重要，决定着后面能够走多远，通过观察身边的人，我觉得很有道理，<strong>我要像经营公司一样，经营自己，把握好时间，我什么也没有，时间是我这个小公司唯一的财富</strong> 。让钱生钱，而不是时间换钱，穷是病，得治；</p>
+<ol>
+<li>今年过年前，必须开始读框架源码，争取换一份工作，给自己一个交代，要不断给自己压力，这样才能成长，加油！！！<br>明年上半年，必须大致看完一个框架的源码，提高工作效率，使用JavaScript写一些小工具，<br>明年下半年，学习NodeJS,必须学会，并实践</li>
+<li>努力成为自己的榜样，</li>
+<li>做一个蜗牛，可以慢，但是不能停下来，如果，现在不拼一下，将来那什么回忆曾经</li>
+</ol>
+<h3 id="TODOLIST"><a href="#TODOLIST" class="headerlink" title="TODOLIST"></a>TODOLIST</h3><ol>
+<li>我的博客 hexo+github（偏向个人） vuepress（技术）</li>
+<li>我的小程序 （记账本，理财）</li>
+<li>学习理财知识</li>
+<li>培养好习惯，背单词， 拒绝焦虑，浮躁</li>
+<li>精通JavaScript</li>
+<li>确定自己的未来大方向 暂定 区块链吧！！！</li>
+<li>要做好准备，抓住下一个技术浪潮，摆脱贫困，财务自由，</li>
+<li>自己为自己打工，要不断经营自己的品牌，‘</li>
+<li>多读书，</li>
+<li>做一个通用的人，也要做一个不可替代的人</li>
+<li>立志，要在程序圈里留下点什么，</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术之外</category>
+      </categories>
+      <tags>
+        <tag>瞎扯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello Hexo</title>
+    <url>/2022/09/07/hello-world/</url>
+    <content><![CDATA[<p>很高兴遇见你！，本站是使用<a href="https://hexo.io/zh-cn/">hexo</a>，一个快速，简介的博客框架搭建而成的，使用的主题是<a href="https://shen-yu.gitee.io/">Ayer</a>,一个很中意的主题，实际使用后，发现也真的很好用 </p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><blockquote>
+<p>搭建过程中，参考的文档，感谢这些文档，感谢他们的分享，吃水不忘挖井人，记录一下这些好文章！</p>
+</blockquote>
+<ol>
+<li><a href="https://hexo.io/zh-cn/">官网</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/26625249">github+hexo搭建个人网站</a>；他的其他文章也很好！</li>
+<li><a href="https://zhuanlan.zhihu.com/p/552639819">知乎2022搭建教程，从0到1版</a></li>
+<li><a href="https://yuchen-lea.github.io/2016-01-18-hexo-dir-struct/">hexo目录结构解析</a></li>
+</ol>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="创建一个新的文章"><a href="#创建一个新的文章" class="headerlink" title="创建一个新的文章"></a>创建一个新的文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="本地运行，查看效果"><a href="#本地运行，查看效果" class="headerlink" title="本地运行，查看效果"></a>本地运行，查看效果</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server  // 简写为：hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate  // 简写为：hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy  // 简写为：hexo d</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>技术之内</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+</search>
