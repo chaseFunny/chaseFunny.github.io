@@ -15,7 +15,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>杭州与我 |  和拖延说拜拜</title>
+      <title>vue2双向数据绑定原理 |  和拖延说拜拜</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -58,7 +58,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hangzhou"
+  id="post-vue2双向数据绑定原理"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  杭州与我
+  vue2双向数据绑定原理
 </h1>
  
 
@@ -77,11 +77,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/09/09/hangzhou/" class="article-date">
-  <time datetime="2022-09-09T14:14:49.000Z" itemprop="datePublished">2022-09-09</time>
+      <a href="/2022/09/11/vue2%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86/" class="article-date">
+  <time datetime="2022-09-11T15:19:12.000Z" itemprop="datePublished">2022-09-11</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%A4%96/">技术之外</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E4%B9%8B%E5%86%85/">技术之内</a>
   </div>
   
 <div class="word_count">
@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">55</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -98,20 +98,76 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>已经忘记第一次来杭州是什么时候了，因为我很小就来过杭州，小时候感觉大城市真好，灯火通明，小时候的想法也真的天真，让人怀恋</p>
+  <h3 id="Vue-js-数据双向绑定的原理及实现"><a href="#Vue-js-数据双向绑定的原理及实现" class="headerlink" title="Vue.js 数据双向绑定的原理及实现"></a>Vue.js 数据双向绑定的原理及实现</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/1012/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" alt="pic"></p>
+<h4 id="先引入Vue源码实现"><a href="#先引入Vue源码实现" class="headerlink" title="先引入Vue源码实现"></a>先引入Vue源码实现</h4><ol>
+<li>创建HTML，创建两个span，使用插值表达式来引入Vue中的数据，同时input标签也使用v-model绑定数据</li>
+<li>接下来script标签中，创建Vue实例vm，并且把数据挂载到div标签上，并在控制台打印实例</li>
+<li>先使用Vue源码，测试是能够实现双向数据绑定的</li>
+<li>接下来就是我们自己来实现这个引入的vue.js文件，来实现数据的双向绑定</li>
+</ol>
+<h4 id="自己手动实现"><a href="#自己手动实现" class="headerlink" title="自己手动实现"></a>自己手动实现</h4><ol>
+<li>用class创建一个Vue实例，在constructor接受实例传来的值，并存到this.$data</li>
+<li>创建一个Observer函数，用来监听$data中的每一个属性，使用Object.defineProperties()实现</li>
+<li>为每个属性设置getter 和 setter属性，我们在刚开始定义属性时候并没有设置它 </li>
+<li>这里set函数不需要返回，只需要把最新的值赋值给values即可，修改values后，getter触发也会访问最新的values</li>
+<li>现在我们只能遍历最外层的属性，如果属性中还有属性就会监听不到</li>
+<li>我们需要递归来实现数据深层的监听</li>
+<li>现在数据已经劫持到了，并且能够更新，接下来，需要把数据同步更新到view层</li>
+<li>获取页面元素  - 应用vue数据 - 渲染页面，这里需要加一个，把所有数据都更新后再渲染页面，而不是获取一个元素渲染一次页面，减少DOM操作</li>
+<li>获取页面元素 - 放入临时内存区域 - 应用vue数据 - 渲染页面</li>
+<li>创建HTML模板解析函数，接受vue实例挂在的元素和vue实例，这样就可以把vue实例上的数据解析到页面上</li>
+<li>我们在构造的时候就调用这个解析器Compile函数</li>
+<li>当我们把vue实例绑定元素的值循环存到fragment中，这个时候页面#app下就没有内容了，因为内容现在都存到了临时碎片中</li>
+<li>直接把我们要修改的内容应用到应用到文档碎片里面，应用后在重新渲染页面即可</li>
+<li>打印fragment.childNodes,我们可以看到这里有很多类型子节点，我们是修改数据，所以我们只需要关心数组中的text节点，文本节点类型是3</li>
+<li>创建一个专门修改内容的函数, 函数做的事情是：接受节点，匹配到包含插值表达式的变量，并拿到真正的数据替换掉</li>
+<li>现在我们实现了，数据的劫持和显示但是数据变更，还是不能及时更新</li>
+<li>使用<strong>发布-订阅者模式</strong> 实现数据双向绑定，这里发布者就是vue实例，订阅者就是</li>
+<li>创建 发布者类 和订阅者类，接下来，发布者通知订阅者，订阅者就可以调用自己接受的回调函数来响应更新</li>
+<li>那什么时候创建这个订阅者实例呢？ 那么就需要看看我们是什么时候修改文档内容的，也就是在模板解析的时候 也就是节点值替换内容的时候，我们应该告诉订阅者如何更新自己，<br>也就是替换文档碎片内容的时候告诉订阅者如何更新，之后回调订阅者就知道如何更新自己了</li>
+<li>我们还要把订阅者存储到Dependency实例数组中，方法是：我们在创建Watcher实例的时候保存实例到订阅者数组中</li>
+<li>接下来就要把这个新的订阅者，添加到订阅者数组中,但是这个时候订阅者实例是不存在的，我们需要创建这个Dependency实例</li>
+<li>接下来当数据发生更新，就要在setter中；通知订阅者来更新内容 </li>
+<li>现在我们完成了文本的绑定，接下来绑定输入框，vue的v-model可以用来绑定，<ol>
+<li>知道那个节点有v-model，元素节点的节点类型nodeType &#x3D;&#x3D;&#x3D; 1,也可以用nodeName来匹配INPUT元素</li>
+<li>我们可以在compile函数判断文本下进行判断，找到v-model的元素</li>
+<li>把data中的数据传给input的value</li>
+</ol>
+</li>
+</ol>
+<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ol>
+<li>Object.keys用于遍历对象，获取对象的属性，并返回一个属性数组</li>
+<li>Object.defineProperty用于在一个对象上定义新的属性，或者修改现有属性，返回改对象</li>
+<li>document.createDocumentFragment() 创建一个空白文档片段</li>
+<li>RegExp.prototype.exec()；在一个指定字符串中执行一个搜索匹配，返回结果数组或者null</li>
+<li>Array.prototype.reduce() <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></li>
+</ol>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ol>
+<li>在自己通过<strong>Object.defineProperties</strong>实现双向数据绑定的时候，只对对象类型进行劫持，没有对数组进行劫持</li>
+<li>vue3.0之前使用的是<strong>Object.defineProperties</strong>，3.0之后使用的是<strong>Proxy</strong></li>
+</ol>
+<h4 id="问题？"><a href="#问题？" class="headerlink" title="问题？"></a>问题？</h4><ol>
+<li>如果修改data的时候把一个初始化字符串类型的赋值一个对象类型，这个时候监听就会失效，怎么办？<br>在监听函数Observer的setter函数中调用自身，来实现对输入的val进行Observer()</li>
+<li>如果给$data 添加新的属性并且赋值新的对象，这个时候也会监听不到怎么办？ </li>
+<li>创建一个Observer函数，用来监听$data中的每一个属性</li>
+</ol>
+<h4 id="本内容参考视频"><a href="#本内容参考视频" class="headerlink" title="本内容参考视频"></a>本内容参考视频</h4><p>技术蛋老师：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1934y1a7MN?spm_id_from=333.999.0.0&amp;vd_source=ce628a5bd43df277d141676215ef5ff3">https://www.bilibili.com/video/BV1934y1a7MN?spm_id_from=333.999.0.0&amp;vd_source=ce628a5bd43df277d141676215ef5ff3</a></p>
+<h4 id="实现源码"><a href="#实现源码" class="headerlink" title="实现源码"></a>实现源码</h4><p>Github：<a target="_blank" rel="noopener" href="https://github.com/chaseFunny/Daily-Interview/blob/master/Vue%E7%9A%84%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/main.js">https://github.com/chaseFunny/Daily-Interview/blob/master/Vue%E7%9A%84%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/main.js</a></p>
  
       <!-- reward -->
       
@@ -176,12 +232,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chasefunny.github.io/2022/09/09/hangzhou/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chasefunny.github.io/2022/09/11/vue2%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%88%91%E5%92%8Cxx/" rel="tag">我和xx</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/" rel="tag">框架学习</a></li></ul>
 
     </footer>
   </div>
@@ -189,19 +245,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/09/09/about-me/" class="article-nav-link">
+      <a href="/2022/09/11/OBS%E5%BD%95%E5%B1%8F%E6%8E%A2%E7%B4%A2/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            我是谁？
+            OBS录屏探索
           
         </div>
       </a>
     
     
-      <a href="/2022/09/07/hello-world/" class="article-nav-link">
+      <a href="/2022/09/10/web/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Hello Hexo</div>
+        <div class="article-nav-title">前端与我</div>
       </a>
     
   </nav>

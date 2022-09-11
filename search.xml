@@ -1,6 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>杭州与我</title>
+    <url>/2022/09/09/hangzhou/</url>
+    <content><![CDATA[<p>已经忘记第一次来杭州是什么时候了，因为我很小就来过杭州，小时候感觉大城市真好，灯火通明，小时候的想法也真的天真，让人怀恋</p>
+]]></content>
+      <categories>
+        <category>技术之外</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+        <tag>我和xx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程中提高编程效率的小妙招</title>
+    <url>/2022/09/11/%E7%BC%96%E7%A8%8B%E4%B8%AD%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B%E6%95%88%E7%8E%87%E7%9A%84%E5%B0%8F%E5%A6%99%E6%8B%9B/</url>
+    <content><![CDATA[<h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><blockquote>
+<p>一个好的工具，对于程序员来说太重要了！</p>
+</blockquote>
+<ol>
+<li><a href="https://typoraio.cn/">typora</a>：一个好用，方便，干净的记录计划，想法的桌面应用，</li>
+<li><a href="https://xmind.cn/">xmind</a>：一个思维导图工具，让你的想法更加清晰</li>
+<li><a href="https://app.diagrams.net/">draw.io</a>：流程图绘画的应用</li>
+</ol>
+<h4 id="写代码经验"><a href="#写代码经验" class="headerlink" title="写代码经验"></a>写代码经验</h4><ol>
+<li>先想后写，复杂逻辑，记得设计</li>
+<li>永远怀着一颗敬畏的心，去寻找最佳实践</li>
+<li>组件化，模块化，解耦，面向对象，设计模式，要体现在代码当中</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术之内</category>
+      </categories>
+      <tags>
+        <tag>编程经验</tag>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OBS录屏探索</title>
+    <url>/2022/09/11/OBS%E5%BD%95%E5%B1%8F%E6%8E%A2%E7%B4%A2/</url>
+    <content><![CDATA[<h4 id="相关网址"><a href="#相关网址" class="headerlink" title="相关网址"></a>相关网址</h4><ol>
+<li>官网：<a href="https://obsproject.com/">https://obsproject.com/</a></li>
+<li>美陆狮：<a href="https://obs.pub/81.html">https://obs.pub/81.html</a></li>
+</ol>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ol>
+<li>官网下载慢，所有有了美陆狮，它可帮我们基本上解决所有问题</li>
+</ol>
+<h4 id="电脑录屏麦克风噪音解决方法"><a href="#电脑录屏麦克风噪音解决方法" class="headerlink" title="电脑录屏麦克风噪音解决方法"></a>电脑录屏麦克风噪音解决方法</h4><p>消除麦克风噪音，电流音，提高人声的方法,这里提供几个思路，我也是从网上慢慢找的，最终也没有达到想要的效果，但是结果是合格的</p>
+<ol>
+<li>使用OBS自带的声音滤镜， 美陆狮官网有教程</li>
+<li>使用一款叫<code>EZ.Microphone</code>的<a href="https://www.ez-mic.com/">软件</a>，它可将你的iphone当做录音设备</li>
+<li>下载<code>NVIDIA Broadcast</code>，一个应用程序，可以将任何房间变成家庭工作室</li>
+<li>钞能力，换设备</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术之外</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>sparkMore</tag>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue2双向数据绑定原理</title>
+    <url>/2022/09/11/vue2%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h3 id="Vue-js-数据双向绑定的原理及实现"><a href="#Vue-js-数据双向绑定的原理及实现" class="headerlink" title="Vue.js 数据双向绑定的原理及实现"></a>Vue.js 数据双向绑定的原理及实现</h3><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/1012/vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A.png" alt="pic"></p>
+<h4 id="先引入Vue源码实现"><a href="#先引入Vue源码实现" class="headerlink" title="先引入Vue源码实现"></a>先引入Vue源码实现</h4><ol>
+<li>创建HTML，创建两个span，使用插值表达式来引入Vue中的数据，同时input标签也使用v-model绑定数据</li>
+<li>接下来script标签中，创建Vue实例vm，并且把数据挂载到div标签上，并在控制台打印实例</li>
+<li>先使用Vue源码，测试是能够实现双向数据绑定的</li>
+<li>接下来就是我们自己来实现这个引入的vue.js文件，来实现数据的双向绑定</li>
+</ol>
+<h4 id="自己手动实现"><a href="#自己手动实现" class="headerlink" title="自己手动实现"></a>自己手动实现</h4><ol>
+<li>用class创建一个Vue实例，在constructor接受实例传来的值，并存到this.$data</li>
+<li>创建一个Observer函数，用来监听$data中的每一个属性，使用Object.defineProperties()实现</li>
+<li>为每个属性设置getter 和 setter属性，我们在刚开始定义属性时候并没有设置它 </li>
+<li>这里set函数不需要返回，只需要把最新的值赋值给values即可，修改values后，getter触发也会访问最新的values</li>
+<li>现在我们只能遍历最外层的属性，如果属性中还有属性就会监听不到</li>
+<li>我们需要递归来实现数据深层的监听</li>
+<li>现在数据已经劫持到了，并且能够更新，接下来，需要把数据同步更新到view层</li>
+<li>获取页面元素  - 应用vue数据 - 渲染页面，这里需要加一个，把所有数据都更新后再渲染页面，而不是获取一个元素渲染一次页面，减少DOM操作</li>
+<li>获取页面元素 - 放入临时内存区域 - 应用vue数据 - 渲染页面</li>
+<li>创建HTML模板解析函数，接受vue实例挂在的元素和vue实例，这样就可以把vue实例上的数据解析到页面上</li>
+<li>我们在构造的时候就调用这个解析器Compile函数</li>
+<li>当我们把vue实例绑定元素的值循环存到fragment中，这个时候页面#app下就没有内容了，因为内容现在都存到了临时碎片中</li>
+<li>直接把我们要修改的内容应用到应用到文档碎片里面，应用后在重新渲染页面即可</li>
+<li>打印fragment.childNodes,我们可以看到这里有很多类型子节点，我们是修改数据，所以我们只需要关心数组中的text节点，文本节点类型是3</li>
+<li>创建一个专门修改内容的函数, 函数做的事情是：接受节点，匹配到包含插值表达式的变量，并拿到真正的数据替换掉</li>
+<li>现在我们实现了，数据的劫持和显示但是数据变更，还是不能及时更新</li>
+<li>使用<strong>发布-订阅者模式</strong> 实现数据双向绑定，这里发布者就是vue实例，订阅者就是</li>
+<li>创建 发布者类 和订阅者类，接下来，发布者通知订阅者，订阅者就可以调用自己接受的回调函数来响应更新</li>
+<li>那什么时候创建这个订阅者实例呢？ 那么就需要看看我们是什么时候修改文档内容的，也就是在模板解析的时候 也就是节点值替换内容的时候，我们应该告诉订阅者如何更新自己，<br>也就是替换文档碎片内容的时候告诉订阅者如何更新，之后回调订阅者就知道如何更新自己了</li>
+<li>我们还要把订阅者存储到Dependency实例数组中，方法是：我们在创建Watcher实例的时候保存实例到订阅者数组中</li>
+<li>接下来就要把这个新的订阅者，添加到订阅者数组中,但是这个时候订阅者实例是不存在的，我们需要创建这个Dependency实例</li>
+<li>接下来当数据发生更新，就要在setter中；通知订阅者来更新内容 </li>
+<li>现在我们完成了文本的绑定，接下来绑定输入框，vue的v-model可以用来绑定，<ol>
+<li>知道那个节点有v-model，元素节点的节点类型nodeType &#x3D;&#x3D;&#x3D; 1,也可以用nodeName来匹配INPUT元素</li>
+<li>我们可以在compile函数判断文本下进行判断，找到v-model的元素</li>
+<li>把data中的数据传给input的value</li>
+</ol>
+</li>
+</ol>
+<h4 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h4><ol>
+<li>Object.keys用于遍历对象，获取对象的属性，并返回一个属性数组</li>
+<li>Object.defineProperty用于在一个对象上定义新的属性，或者修改现有属性，返回改对象</li>
+<li>document.createDocumentFragment() 创建一个空白文档片段</li>
+<li>RegExp.prototype.exec()；在一个指定字符串中执行一个搜索匹配，返回结果数组或者null</li>
+<li>Array.prototype.reduce() <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></li>
+</ol>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ol>
+<li>在自己通过<strong>Object.defineProperties</strong>实现双向数据绑定的时候，只对对象类型进行劫持，没有对数组进行劫持</li>
+<li>vue3.0之前使用的是<strong>Object.defineProperties</strong>，3.0之后使用的是<strong>Proxy</strong></li>
+</ol>
+<h4 id="问题？"><a href="#问题？" class="headerlink" title="问题？"></a>问题？</h4><ol>
+<li>如果修改data的时候把一个初始化字符串类型的赋值一个对象类型，这个时候监听就会失效，怎么办？<br>在监听函数Observer的setter函数中调用自身，来实现对输入的val进行Observer()</li>
+<li>如果给$data 添加新的属性并且赋值新的对象，这个时候也会监听不到怎么办？ </li>
+<li>创建一个Observer函数，用来监听$data中的每一个属性</li>
+</ol>
+<h4 id="本内容参考视频"><a href="#本内容参考视频" class="headerlink" title="本内容参考视频"></a>本内容参考视频</h4><p>技术蛋老师：<a href="https://www.bilibili.com/video/BV1934y1a7MN?spm_id_from=333.999.0.0&amp;vd_source=ce628a5bd43df277d141676215ef5ff3">https://www.bilibili.com/video/BV1934y1a7MN?spm_id_from=333.999.0.0&amp;vd_source=ce628a5bd43df277d141676215ef5ff3</a></p>
+<h4 id="实现源码"><a href="#实现源码" class="headerlink" title="实现源码"></a>实现源码</h4><p>Github：<a href="https://github.com/chaseFunny/Daily-Interview/blob/master/Vue%E7%9A%84%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/main.js">https://github.com/chaseFunny/Daily-Interview/blob/master/Vue%E7%9A%84%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/main.js</a></p>
+]]></content>
+      <categories>
+        <category>技术之内</category>
+      </categories>
+      <tags>
+        <tag>框架学习</tag>
+        <tag>vue</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端与我</title>
+    <url>/2022/09/10/web/</url>
+    <content><![CDATA[<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/1012/webWithMe.png" alt="xmind"><br>​	不知道从哪里开始说起，那就从疫情爆发开始说起，2019年的临近过年之际，武汉的突然封城，央视晚会最后的节目也改为了共同对抗疫情的宣言，起初，身边的人都把其当做一个普通的流感，很快就会一切如初，直到人们都戴上口罩，原来轻而易举的事情，如今也变得困难重重。我也不知道什么时候，<strong>疫情在我的心中种下了一颗焦虑的种子</strong>，</p>
+<p>​	疫情是在我大二上学期，也就是寒假发生的，疫情的严重使得我的大二下学期在家上网课，后来即使去了学校，也是封校的生活，和之前自由的大学生活对比，这种压抑的生活使得<strong>内心焦虑的种子茁壮成长</strong>，在家的网课让我更早的真正接近毕业进入社会的生活，在校的封闭生活也和之前校外快乐时光形成鲜明对比，<strong>在校的无聊让我对未来有了时间去思考，让我对大学生活有了更多的思考</strong>，当时的总结就是：玩的不尽兴，没有学到吃饭的东西，也没有找到自己感兴趣的方向，还学了一身坏毛病，我不否定大学的积极意义，但是一个普通大学营造的没有压力的环境，真的容易让人“隔江犹唱后庭花”。但是，幸运女神总是会眷顾着每一个热爱生活的人，学校开设了《HTML5+CSS网页技术》这门课程，当时我是学过java和c++的，我觉的编程真的好没意思，一点都不好玩，但是眼前的这个，就是我每天接触的网页，网站内容，所见即所得，最重要的是，门槛低，我知道，我找的就是它，这也是我大学学的最认真的一门课程，但是当时我不知道这是可以吃饭的东西，<strong>我就是觉得它好玩</strong></p>
+<p>​	当大三下学期的时候，焦虑变得更加严重了，因为宿舍的同学都去考研了，看见他们的未来是如此的明确，我害怕了，其中压力给我最大的是家里，我知道再晚一点就来不及了，通过黑马培训机构，看他们的官网，我当时知道了前端这个岗位，这个太关键了，因为，我有目标了，我手里的箭知道往哪里发射，<strong>心里有了目标，生活也充实了</strong>，老百姓的话就是：“生活有了奔头”，</p>
+<p> 我和很多人一样，知道自己学历不好，想去报班，但是钱包不允许啊！于是，我就想找一个好一点的教程，因为前端这个词是黑马告诉我的，外加我的前端启蒙老师黑马PINK老师，当时非常想去报班，但是报班需要2万，摆在面前就只有自学，我买了一套黑马2020版本的课程，我边学，边逛哔哩哔哩，来确保自己学习的知识是最新的，也是那个时候我遇到了很多优秀的编程up主，也认识了程序员鱼皮UP主，当时的印象就是腾讯程序员，大厂程序员，可以看见大厂的影响力，它确实能够影响一个人的思维和行动，</p>
+<p>​	 <strong>如果不是真的喜欢，我想我应该不会走到今天</strong>，因为前端学到后面也是需要面对枯燥，生涩难懂的知识，所以搞定技术之前，我们需要先搞定自己，如果内心的排斥会事倍功半，反之内心的接受也就会事半功倍，</p>
+<p>​	当我找到一个自己内心满意的教程，我就开始了不计日夜的学习，当时学习到什么程度呢？我在学习JavaScript时候，看视频看到半夜两点半，给学部官网做网页，做到凌晨四点半，如果没有那么一点兴趣在里面，我是做不到不困的，宿舍的人那时候都说他们考研都没我能熬，<strong>我当时内心是自豪的</strong>，</p>
+<p>不知不觉，时间到了大三暑假，我学完了HTML5；CSS3；JavaScript；Ajax和Node.js，当时通过这技术，我跟着视频做了静态网站（仿京东），后台管理系统（layout+三件套+Node.js)，我并没有续往下学，因为当时我觉得可以去找实习了，我的内心不再允许我继续学下去了，我也去了，在郑州面了六家，都不行，<strong>现实是最好的冷却剂</strong>，放假了，我去了杭州，现实给内心泼了凉水，我又静心学习了两个月，学完vue2，做了一套后台系统，这一次，我认真准备了简历，星光不负赶路人，我到了实习，入职是2021,08,23，实习一年，现在已经转正，现在我又到了一个路口，觉得自己现在的力能够去更大的舞台，这两个月都是这个声音，怎么也赶不走，内心焦虑也随之而来，清楚的认识到己能力还需要沉淀，但是又想要跑快一点，这一次也是一样，家里给我的压力很大，历史总是惊人的似，</p>
+<p>​	我知道，压力最大时候，也是人生转折的时候，但这一次焦虑来的更加猛烈，把心放在何处，才能把今天过好，把未来过好，到底是加大压力，写简历去面试，还是减小压力，静下心来，打基础，冲击大厂？必须有一个答案了，因为<strong>我不想再拿着弓箭，却没有靶心</strong></p>
+<p>​	既然，谈的是我与前端，就不能只谈过去和现在，如果说，我知道我在前端发展上的未来是什么样的，那也就不能说是未来，未来是未知的，但是，未来又是可规划的，俗话说：<strong>不忘初心，方得始终</strong>，最开始喜欢前端，喜欢的是，那种所见即所得，那种有意思的好看的页面，所以我想我能够带着这份初心，进入前端可视化领域，深耕可视化方向，成为一个前端可视化领域有一点点影响力的人，把这个目标作为灯塔，</p>
+<p> 最后，我预想一下，我要怎么摆脱现在的困境，</p>
+<ol>
+<li><p>写简历，仓促的去面试，找一个更好的工作，</p>
+</li>
+<li><p>重学前端，把基础打牢，更加从容的去面试</p>
+</li>
+</ol>
+<p>写完了，我的答案也出现了，</p>
+]]></content>
+      <categories>
+        <category>技术之外</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+        <tag>我和xx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我是谁？</title>
     <url>/2022/09/09/about-me/</url>
     <content><![CDATA[<p>作者： 我叫不拖延<br>时间：2022&#x2F;08&#x2F;21</p>
@@ -35,7 +197,8 @@
         <category>技术之外</category>
       </categories>
       <tags>
-        <tag>瞎扯</tag>
+        <tag>感悟</tag>
+        <tag>我和xx</tag>
       </tags>
   </entry>
   <entry>
@@ -69,46 +232,7 @@
       </categories>
       <tags>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>杭州与我</title>
-    <url>/2022/09/09/hangzhou/</url>
-    <content><![CDATA[<p>已经忘记第一次来杭州是什么时候了，因为我很小就来过杭州，小时候感觉大城市真好，灯火通明，小时候的想法也真的天真，让人怀恋</p>
-]]></content>
-      <categories>
-        <category>技术之外</category>
-      </categories>
-      <tags>
-        <tag>财米油盐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端与我</title>
-    <url>/2022/09/10/web/</url>
-    <content><![CDATA[<p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/1012/webWithMe.png" alt="xmind"><br>​	不知道从哪里开始说起，那就从疫情爆发开始说起，2019年的临近过年之际，武汉的突然封城，央视晚会最后的节目也改为了共同对抗疫情的宣言，起初，身边的人都把其当做一个普通的流感，很快就会一切如初，直到人们都戴上口罩，原来轻而易举的事情，如今也变得困难重重。我也不知道什么时候，<strong>疫情在我的心中种下了一颗焦虑的种子</strong>，</p>
-<p>​	疫情是在我大二上学期，也就是寒假发生的，疫情的严重使得我的大二下学期在家上网课，后来即使去了学校，也是封校的生活，和之前自由的大学生活对比，这种压抑的生活使得<strong>内心焦虑的种子茁壮成长</strong>，在家的网课让我更早的真正接近毕业进入社会的生活，在校的封闭生活也和之前校外快乐时光形成鲜明对比，<strong>在校的无聊让我对未来有了时间去思考，让我对大学生活有了更多的思考</strong>，当时的总结就是：玩的不尽兴，没有学到吃饭的东西，也没有找到自己感兴趣的方向，还学了一身坏毛病，我不否定大学的积极意义，但是一个普通大学营造的没有压力的环境，真的容易让人“隔江犹唱后庭花”。但是，幸运女神总是会眷顾着每一个热爱生活的人，学校开设了《HTML5+CSS网页技术》这门课程，当时我是学过java和c++的，我觉的编程真的好没意思，一点都不好玩，但是眼前的这个，就是我每天接触的网页，网站内容，所见即所得，最重要的是，门槛低，我知道，我找的就是它，这也是我大学学的最认真的一门课程，但是当时我不知道这是可以吃饭的东西，<strong>我就是觉得它好玩</strong></p>
-<p>​	当大三下学期的时候，焦虑变得更加严重了，因为宿舍的同学都去考研了，看见他们的未来是如此的明确，我害怕了，其中压力给我最大的是家里，我知道再晚一点就来不及了，通过黑马培训机构，看他们的官网，我当时知道了前端这个岗位，这个太关键了，因为，我有目标了，我手里的箭知道往哪里发射，<strong>心里有了目标，生活也充实了</strong>，老百姓的话就是：“生活有了奔头”，</p>
-<p> 我和很多人一样，知道自己学历不好，想去报班，但是钱包不允许啊！于是，我就想找一个好一点的教程，因为前端这个词是黑马告诉我的，外加我的前端启蒙老师黑马PINK老师，当时非常想去报班，但是报班需要2万，摆在面前就只有自学，我买了一套黑马2020版本的课程，我边学，边逛哔哩哔哩，来确保自己学习的知识是最新的，也是那个时候我遇到了很多优秀的编程up主，也认识了程序员鱼皮UP主，当时的印象就是腾讯程序员，大厂程序员，可以看见大厂的影响力，它确实能够影响一个人的思维和行动，</p>
-<p>​	 <strong>如果不是真的喜欢，我想我应该不会走到今天</strong>，因为前端学到后面也是需要面对枯燥，生涩难懂的知识，所以搞定技术之前，我们需要先搞定自己，如果内心的排斥会事倍功半，反之内心的接受也就会事半功倍，</p>
-<p>​	当我找到一个自己内心满意的教程，我就开始了不计日夜的学习，当时学习到什么程度呢？我在学习JavaScript时候，看视频看到半夜两点半，给学部官网做网页，做到凌晨四点半，如果没有那么一点兴趣在里面，我是做不到不困的，宿舍的人那时候都说他们考研都没我能熬，<strong>我当时内心是自豪的</strong>，</p>
-<p>不知不觉，时间到了大三暑假，我学完了HTML5；CSS3；JavaScript；Ajax和Node.js，当时通过这技术，我跟着视频做了静态网站（仿京东），后台管理系统（layout+三件套+Node.js)，我并没有续往下学，因为当时我觉得可以去找实习了，我的内心不再允许我继续学下去了，我也去了，在郑州面了六家，都不行，<strong>现实是最好的冷却剂</strong>，放假了，我去了杭州，现实给内心泼了凉水，我又静心学习了两个月，学完vue2，做了一套后台系统，这一次，我认真准备了简历，星光不负赶路人，我到了实习，入职是2021,08,23，实习一年，现在已经转正，现在我又到了一个路口，觉得自己现在的力能够去更大的舞台，这两个月都是这个声音，怎么也赶不走，内心焦虑也随之而来，清楚的认识到己能力还需要沉淀，但是又想要跑快一点，这一次也是一样，家里给我的压力很大，历史总是惊人的似，</p>
-<p>​	我知道，压力最大时候，也是人生转折的时候，但这一次焦虑来的更加猛烈，把心放在何处，才能把今天过好，把未来过好，到底是加大压力，写简历去面试，还是减小压力，静下心来，打基础，冲击大厂？必须有一个答案了，因为<strong>我不想再拿着弓箭，却没有靶心</strong></p>
-<p>​	既然，谈的是我与前端，就不能只谈过去和现在，如果说，我知道我在前端发展上的未来是什么样的，那也就不能说是未来，未来是未知的，但是，未来又是可规划的，俗话说：<strong>不忘初心，方得始终</strong>，最开始喜欢前端，喜欢的是，那种所见即所得，那种有意思的好看的页面，所以我想我能够带着这份初心，进入前端可视化领域，深耕可视化方向，成为一个前端可视化领域有一点点影响力的人，把这个目标作为灯塔，</p>
-<p> 最后，我预想一下，我要怎么摆脱现在的困境，</p>
-<ol>
-<li><p>写简历，仓促的去面试，找一个更好的工作，</p>
-</li>
-<li><p>重学前端，把基础打牢，更加从容的去面试</p>
-</li>
-</ol>
-<p>写完了，我的答案也出现了，</p>
-]]></content>
-      <categories>
-        <category>技术之外</category>
-      </categories>
-      <tags>
-        <tag>总结 | 自我省视</tag>
+        <tag>bolg</tag>
       </tags>
   </entry>
 </search>
